@@ -1,0 +1,1 @@
+class TableTop(val width: Int, val height: Int)

@@ -1,0 +1,1 @@
+class Position(var xPosition: Int, var yPosition: Int)
