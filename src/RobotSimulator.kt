@@ -46,7 +46,12 @@ object RobotSimulator {
     }
 
     private fun left() {
-
+        when (robot.directionFacing) {
+            Direction.NORTH -> robot.directionFacing = Direction.WEST
+            Direction.EAST -> robot.directionFacing = Direction.NORTH
+            Direction.SOUTH -> robot.directionFacing = Direction.EAST
+            Direction.WEST -> robot.directionFacing = Direction.SOUTH
+        }
     }
 
     private fun right() {
