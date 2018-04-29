@@ -17,11 +17,11 @@ object RobotSimulator {
 
     private fun isWithinBoundry(position: Position): Boolean {
 
-        return (position.xPosition < table.width && position.yPosition < table.height);
+        return (position.xPosition < table.width && position.yPosition < table.height)
     }
 
     fun isRobotPlaced(): Boolean {
-        return (robot != null);
+        return (robot != null)
     }
 
     private fun place(position: Position, f: Direction) {
@@ -55,7 +55,12 @@ object RobotSimulator {
     }
 
     private fun right() {
-
+        when (robot.directionFacing) {
+            Direction.NORTH -> robot.directionFacing = Direction.EAST
+            Direction.EAST -> robot.directionFacing = Direction.SOUTH
+            Direction.SOUTH -> robot.directionFacing = Direction.WEST
+            Direction.WEST -> robot.directionFacing = Direction.NORTH
+        }
     }
 
     private fun report() {
