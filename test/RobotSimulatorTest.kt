@@ -53,4 +53,28 @@ class RobotSimulatorTest {
         assertEquals(Direction.NORTH, RobotSimulator.robot.directionFacing)
     }
 
+    //Robot move across table
+    @Test
+    fun scenario1() {
+        RobotSimulator.run(PlaceCommand.build("PLACE 0,0,EAST"))
+        RobotSimulator.run(MoveCommand)
+        RobotSimulator.run(MoveCommand)
+
+        RobotSimulator.run(LeftCommand)
+        RobotSimulator.run(MoveCommand)
+        RobotSimulator.run(MoveCommand)
+
+        RobotSimulator.run(RightCommand)
+        RobotSimulator.run(MoveCommand)
+        RobotSimulator.run(MoveCommand)
+        RobotSimulator.run(MoveCommand)
+        RobotSimulator.run(MoveCommand)
+
+        assertEquals(Direction.EAST, RobotSimulator.robot.directionFacing)
+        assertEquals(5, RobotSimulator.robot.currentPosition.xPosition)
+        assertEquals(2, RobotSimulator.robot.currentPosition.yPosition)
+
+
+    }
+
 }
